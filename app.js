@@ -5,4 +5,22 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: 'at www.divinerealms.us', type: 0 } });
 });
 
+client.on("message", message => {
+var args = message.content.split(/[ ]+/)
+const embed = new Discord.RichEmbed()
+  .setDescription((args.join(" ").substring(8)))
+  .setAuthor(`Prijava od ${message.author.username}:`, `${message.author.displayAvatarURL}`)
+  .setColor([0, 255, 153])
+  .setFooter("© PickledPotato, 2017")
+  if(message.guild.id === "237171768693882890" && message.content.startsWith("--promo")){
+    if(args.length === 1){
+       message.channel.send("Nedostaje argument. `--promo (dokaz uploadan na imgur.com ili pomocu Lightshota)` da pravilno postavite prijavu.");
+     } else {
+    client.channels.get("381804087202676736").send({embed});
+    message.delete(setTimeout(function () {
+
+        }, 0));
+        }};
+    });
+
 client.login(process.env.BOT_TOKEN);
