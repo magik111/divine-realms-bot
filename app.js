@@ -13,7 +13,6 @@ const embed = new Discord.RichEmbed()
   .setColor([0, 255, 153])
   .setFooter("Copyright PickledPotato, 2016-2017")
   .setTimestamp(new Date())
-  .addField("Hvala na strpljenju!", "Vasu prijavu ce pogledati staff clan sto brze moguce." )
   if(message.guild.id === "237171768693882890" && message.content.startsWith("--report")){
     message.channel.send({embed});
     
