@@ -8,9 +8,9 @@ client.on('ready', () => {
 client.on("message", message => {
 var args = message.content.split(/[ ]+/)
 const embed = new Discord.RichEmbed()
-  .setDescription((args.join(" ").substring(8)))
+  .addField((args.join(" ").substring(8)))
   .setAuthor(`Prijava od ${message.author.username}:`, `${message.author.displayAvatarURL}`)
-  .setColor([66, 134, 244])
+  .setColor([0, 255, 153])
   .setFooter("© PickledPotato, 2017")
   if(message.guild.id === "237171768693882890" && message.content.startsWith("--promo")){
     if(args.length === 1){
